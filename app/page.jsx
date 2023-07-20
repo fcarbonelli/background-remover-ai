@@ -1,18 +1,30 @@
-import Feed from "@components/Feed";
+import VideoRenderer from "@components/VideoRenderer";
+import Features from "@components/Features";
+import Previews from "@components/Previews";
+import FAQ from "@components/FAQ";
+import Footer from "@components/Footer";
 
 const Home = () => (
   <section className='w-full flex-center flex-col'>
     <h1 className='head_text text-center'>
-      Discover & Share
-      <br className='max-md:hidden' />
-      <span className='orange_gradient text-center'> AI-Powered Prompts</span>
+      Video Background Remover
+      <br/>
+      <span className='orange_gradient text-center'>Powered By AI</span>
     </h1>
     <p className='desc text-center'>
-      Promptopia is an open-source AI prompting tool for modern world to
-      discover, create and share creative prompts
+      Seamlessly Extract Backgrounds From Your Videos with AI-Powered Precision
     </p>
+    <div className="flex justify-center lg:p-4 mt-10">
+      <video className="rounded-lg lg:w-3/4" src="assets/videos/GreenScreenDemo.mp4" autoPlay muted loop controls></video>
+    </div>
 
-    <Feed />
+    <Features/>
+    <Previews/>
+    <FAQ/>
+
+    <VideoRenderer/>
+    
+    <Footer/>
   </section>
 );
 

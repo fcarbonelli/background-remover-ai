@@ -4,7 +4,18 @@ const nextConfig = {
     appDir: true,
     serverComponentsExternalPackages: ["mongoose"],
   },
+  reactStrictMode: true,
   images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "replicate.com",
+      },
+      {
+        protocol: "https",
+        hostname: "replicate.delivery",
+      },
+    ],
     domains: ['lh3.googleusercontent.com'],
   },
   webpack(config) {

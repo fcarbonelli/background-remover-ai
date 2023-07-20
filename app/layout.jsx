@@ -4,12 +4,15 @@ import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 
 export const metadata = {
-  title: "Promptopia",
-  description: "Discover & Share AI Prompts",
+  title: "Remove Backgrounds AI",
+  description: "Remove the background of videos using AI - 100% automatically",
 };
 
 const RootLayout = ({ children }) => (
   <html lang='en'>
+    <head>
+      <link rel="Icon" href="/favicon/favicon.ico"/>
+    </head>
     <body>
       <Provider>
         <div className='main'>
@@ -21,6 +24,7 @@ const RootLayout = ({ children }) => (
           {children}
         </main>
       </Provider>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
     </body>
   </html>
 );

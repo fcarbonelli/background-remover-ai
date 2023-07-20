@@ -10,17 +10,17 @@ const MyProfile = () => {
   const router = useRouter();
   const { data: session } = useSession();
 
-  const [myPosts, setMyPosts] = useState([]);
+  const [myVideos, setMyVideos] = useState([]);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${session?.user.id}/posts`);
+    const fetchVideos = async () => {
+      const response = await fetch(`/api/users/${session?.user.id}/videos`);
       const data = await response.json();
 
-      setMyPosts(data);
+      setMyVideos(data);
     };
 
-    if (session?.user.id) fetchPosts();
+    if (session?.user.id) fetchVideos();
   }, [session?.user.id]);
 
   const handleEdit = (post) => {
@@ -40,7 +40,7 @@ const MyProfile = () => {
 
         const filteredPosts = myPosts.filter((item) => item._id !== post._id);
 
-        setMyPosts(filteredPosts);
+        setMyVideos(filteredPosts);
       } catch (error) {
         console.log(error);
       }
@@ -49,9 +49,9 @@ const MyProfile = () => {
 
   return (
     <Profile
-      name='My'
-      desc='Welcome to your personalized profile page. Share your exceptional prompts and inspire others with the power of your imagination'
-      data={myPosts}
+      name='My Videos'
+      desc='Welcome to your video dashboard page.'
+      data={myVideos}
       handleEdit={handleEdit}
       handleDelete={handleDelete}
     />

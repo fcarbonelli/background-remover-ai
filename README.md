@@ -2,7 +2,7 @@
 
 Welcome to our AI Video Background Remover web app! This tool allows you to effortlessly remove backgrounds from videos using the power of artificial intelligence.
 
-![AI Video Background Remover](https://imgur.com/EymZK2Z)
+![AI Video Background Remover](https://i.imgur.com/EymZK2Z.png)
 
 ## How It Works
 

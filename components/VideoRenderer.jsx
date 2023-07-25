@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import BuyButton from "./BuyButton";
 
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -53,7 +54,6 @@ const VideoRenderer = () => {
         }),
       });
       let prediction = await response.json();
-      console.log(prediction)
 
       if (response.status !== 201) {
         setError(prediction.detail);
@@ -70,7 +70,7 @@ const VideoRenderer = () => {
         videoName: orderRef.current.videoName,
         cost: orderRef.current.cost,
         videoLength: orderRef.current.videoLength,
-      }; console.log(orderBody)
+      };
 
       const orderResponse = await fetch("https://e4opydwo8a.execute-api.us-east-1.amazonaws.com/order", {
         method: "POST",
@@ -175,8 +175,10 @@ const VideoRenderer = () => {
       window.createLemonSqueezy();
       LemonSqueezy.Setup({
         eventHandler: (event) => {
+          console.log(event.event)
           if (event.target !== 'metamask-inpage') {
             if (event.event === 'Checkout.Success') {
+              console.log(event.event)
               const video = videoBase64Ref.current;
               createVideo(video)
             }
@@ -203,7 +205,10 @@ const VideoRenderer = () => {
   const [videoError, setVideoError] = useState(null);
   const [isFormValid, setIsFormValid] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    if (event) {
+      event.preventDefault();
+    }
     if (!email) {
       setNameError("Please fill the email field!")
     } else {
@@ -229,10 +234,11 @@ const VideoRenderer = () => {
         Important Notes.
       </p>
       <p className='mt-5 text-md text-gray-600  max-w-2xl text-left '>
+      • Price is just $4.99 for up to a 3 minute video. <br />
       • Ensure your video prominently features a person in a clear position for best results. <br />
       • Please note that the rendered video output will NOT include sound. <br />
       • Expect your rendered video in your inbox within 5 to 10 minutes. (check Spam folder)<br />
-      • If it takes longer than an hour, contact our support team at [support email].
+      • If it takes longer than an hour, contact us for support at carbonelli.francisco@gmail.com
       </p>
     
 
@@ -300,31 +306,31 @@ const VideoRenderer = () => {
 
         <div className='flex-end mt-3'>
 
+        <BuyButton/>
           
-        {isFormValid ? (
-          <a
-            href=''
-            className="lemonsqueezy-button p-5 py-2 text-sm bg-primary-orange rounded-full text-white"
-          >
-            Submit Order 🛒 $6.99
-          </a>
+        {/*isFormValid ? (<a
+        href='https://vesica-lab.lemonsqueezy.com/checkout/buy/a1673e8f-ba61-4250-861a-a66f8064aae9?embed=1&logo=0&dark=1'
+        class="lemonsqueezy-button p-5 py-2 text-sm bg-primary-orange rounded-full text-white"
+    >
+        Submit Order 🛒 $4.99
+    </a>
         ) : (
           <button
             className="p-5 py-2 text-sm bg-primary-orange rounded-full text-white"
             onClick={handleSubmit}
           >
-            Submit Order 🛒 $6.99
+            Submit Order 🛒 $4.99
           </button>
-        )}
+        )*/}
           
         </div>
         <div className='flex-end'>
-          <p className="text-md text-gray-600 text-left ">
-            Safe and secure checkout powered by LemonSqueezy 
+          <p className="text-md text-gray-600 text-right ">
+            Safe and secure checkout powered by LemonSqueezy <br /> We do not make ourselves responsible if the data entered is incorrect.
           </p>
         </div>
       </form>
-
+      <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 
     </section>
   );

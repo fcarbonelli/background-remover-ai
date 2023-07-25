@@ -32,7 +32,6 @@ const Form = ({ type, video, setVideo, submitting, handleSubmit }) => {
 
   const updateVideo = () => {
     setVideo({ ...video, video: videoBase64 });
-    console.log(videoBase64, videoName)
 
   };
 

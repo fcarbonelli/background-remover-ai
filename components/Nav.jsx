@@ -19,12 +19,16 @@ const Nav = () => {
   }, []);
 
   const scrollToTarget = () => {
-    const targetElement = document.getElementById('create-video');
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: 'smooth',
-      });
+    if (window.location.pathname === '/thankyou') {
+      window.location.href = '/';
+    } else {
+      const targetElement = document.getElementById('create-video');
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth',
+        });
+      }
     }
   };
 

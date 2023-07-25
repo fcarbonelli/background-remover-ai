@@ -11,7 +11,7 @@ const FAQ = () => {
                 Frequently Asked Questions
             </p>
             <p class="max-w-2xl mt-4 text-lg tracking-tight text-gray-600">
-                If you have other questions, please contact us at [support email]
+                If you have other questions, please contact us at carbonelli.francisco@gmail.com
             </p>
             </div>
         </div>
@@ -66,7 +66,7 @@ const FAQ = () => {
                     </p>
                     </div>
                     <div class="mt-2 text-base text-gray-500">
-                    Yes, we have a refund policy in place for cases where customers encounter issues with our service. If you experience any difficulties or have concerns, please reach out to our dedicated support team at (support email). 
+                    Yes, we have a refund policy in place for cases where customers encounter issues with our service. If you experience any difficulties or have concerns, please reach out to our dedicated support team at carbonelli.francisco@gmail.com 
                     </div>
                 </li>
                 <li>

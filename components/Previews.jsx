@@ -19,19 +19,19 @@ const Previews = () => {
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                 
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <video src="/assets/videos/GreenScreenDemo.mp4" muted controls class="absolute rounded-lg block max-w-full lg:h-96 h-56 -translate-x-1/2 left-1/2" alt=""></video>
+                    <video src="/assets/videos/GreenScreenDemo.mp4" autoPlay muted controls class="absolute rounded-lg block max-w-full lg:h-96 h-56 -translate-x-1/2 left-1/2" alt=""></video>
                 </div>
                 
                 <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                    <video src="/assets/videos/greenscreen2.mp4" muted controls class="absolute rounded-lg block max-w-full lg:h-96 h-56 -translate-x-1/2 left-1/2" alt=""></video>
+                    <video src="/assets/videos/greenscreen2.mp4" autoPlay muted controls class="absolute rounded-lg block max-w-full lg:h-96 h-56 -translate-x-1/2 left-1/2" alt=""></video>
                 </div>
                 
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <video src="/assets/videos/girl-dancing.mp4" muted controls class="absolute rounded-lg block max-w-full lg:h-96 h-56 -translate-x-1/2 left-1/2" alt=""></video>
+                    <video src="/assets/videos/girl-dancing.mp4" autoPlay muted controls class="absolute rounded-lg block max-w-full lg:h-96 h-56 -translate-x-1/2 left-1/2" alt=""></video>
                 </div>
                 
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <video src="/assets/videos/video-after.mp4" muted controls class="absolute rounded-lg block max-w-full lg:h-96 h-56 -translate-x-1/2 left-1/2" alt=""></video>
+                    <video src="/assets/videos/video-after.mp4" autoPlay muted controls class="absolute rounded-lg block max-w-full lg:h-96 h-56 -translate-x-1/2 left-1/2" alt=""></video>
                 </div>
                 
             </div>

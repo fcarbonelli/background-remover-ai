@@ -64,7 +64,6 @@ const CreatePrompt = () => {
       }
       setPrediction(prediction);
       setPredictionId(prediction.id)
-      console.log({prediction})
 
       if (response.ok) {
         await sleep(2000);
@@ -111,21 +110,17 @@ const CreatePrompt = () => {
 
   useEffect(() => {
     const handleScriptLoad = () => {
-      // Script has finished loading, you can access the object here
       window.createLemonSqueezy();
-      // Use the object as needed
       LemonSqueezy.Setup({
         eventHandler: (event) => {
           if (event.target !== 'metamask-inpage') {
             // Process events only if they are not triggered by Metamask
             if (event.event === 'Checkout.Success') {
-              console.log('HEY');
             }
             console.log(event);
           }   
         }
       })
-      //console.log("HEEY "+lemonsqueezy)
 
     };
 

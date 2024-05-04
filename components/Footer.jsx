@@ -9,9 +9,13 @@ const Footer = () => {
             <hr class="my-10 border-gray-200 " />
 
             <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-                <div class="flex flex-col sm:flex-row sm:items-center">
-                    <p class="text-sm text-gray-500">© Copyright 2023. All Rights Reserved.
-                    </p>
+                <div class="flex flex-col flex-row sm:items-center">
+                    <div class="mb-2 sm:mb-4">
+                        <p class="text-sm text-gray-500">Made with ❤ by <a href="https://twitter.com/francis_vesica" target="_blank" rel="noopener noreferrer" class="text-blue-500">@francis_vesica</a></p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">© Copyright 2024. All Rights Reserved.</p>
+                    </div>
                 </div>
 
                 <p class="lg:ml-20 max-w-md mx-auto mt-4 text-center sm:text-center text-gray-500 sm:max-w-lg">
